@@ -1,6 +1,13 @@
 import discord
 import random
 from discord.ext import commands
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+token = os.getenv("TOKEN")
+
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -140,4 +147,4 @@ async def teste(ctx):
     view = BotaoLegal()
     await ctx.send(embed=embed, view=view)
 
-bot.run("MTQ5ODY4MDMzNjgyODIwNzE0NA.GQ-bap.QikBvV0MYimRtMgxu3V6Wn_jftLjaTR8zmfyHE")
+bot.run(token)
